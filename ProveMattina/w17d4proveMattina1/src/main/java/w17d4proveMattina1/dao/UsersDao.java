@@ -16,8 +16,8 @@ public class UsersDao implements IUsersDao {
 
 	@Override
 	public void save(User user) {
-		String sql = "INSERT INTO users (id, name, surname, email) VALUES (?, ?, ?, ?)";
-		jdbcT.update(sql, user.getId(), user.getName(), user.getSurname(), user.getEmail());
+		String sql = "INSERT INTO users (name, surname, email) VALUES (?, ?, ?)";
+		jdbcT.update(sql, user.getName(), user.getSurname(), user.getEmail());
 
 	}
 

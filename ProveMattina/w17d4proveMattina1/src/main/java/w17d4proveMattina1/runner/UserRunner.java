@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
-import w17d4proveMattina1.dao.UsersDao;
+import w17d4proveMattina1.dao.IUsersDao;
 import w17d4proveMattina1.entities.User;
 
 @Component
@@ -13,15 +13,20 @@ import w17d4proveMattina1.entities.User;
 public class UserRunner implements CommandLineRunner {
 
 	@Autowired
-	private UsersDao ud;
+	private IUsersDao ud;
 
 	@Override
 	public void run(String... args) throws Exception {
-		User miao = User.builder().id(1).name("Fischietto").surname("Figlio di Brunella").email("fischietto@pazzo.it")
+		User miao = User.builder().name("Fischietto").surname("Figlio di Brunella").email("fischietto@pazzo.it")
 				.build();
-		User brrr = User.builder().id(2).name("Brunella").surname("Gattapazza").email("brunella@pazza.it").build();
+		User brrr = User.builder().name("Brunella").surname("Gattapazza").email("brunella@pazza.it").build();
 
-//		ud.save(brrr);
+		User prrr = User.builder().name("Signorina").surname("Senzafigli").email("signorina@pazza.it").build();
+
+		User nnnn = User.builder().name("Nina").surname("Figlia di Brunella").email("nina@pazza.it").build();
+
+//		ud.save(nnnn);
+//		ud.save(prrr);
 //
 //		int numeroModificati = ud.findByIdAndUpdate(1, miao);
 //		log.info("Gatti modificati: " + numeroModificati);
